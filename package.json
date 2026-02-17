@@ -8,6 +8,9 @@
     "preview": "astro preview"
   },
   "author": "Xue Hua",
+  "engines": {
+    "node": ">=18 <=22"
+  },
   "dependencies": {
     "astro": "^5.17.2"
   }
