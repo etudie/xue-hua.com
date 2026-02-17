@@ -1,0 +1,14 @@
+{
+  "name": "xue-hua.com",
+  "version": "1.0.0",
+  "description": "Current version of xue-hua.com",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "author": "Xue Hua",
+  "dependencies": {
+    "astro": "^5.17.2"
+  }
+}
