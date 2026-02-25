@@ -1,6 +1,7 @@
 ---
-import { NAV_LINKS } from "../constants/strings/nav.strings";
+import { NAV_LINKS } from "../constants/strings/nav.strings.ts";
 import { GLOBAL } from "../constants/strings/global.strings";
+import Search from "./Search.astro";
 ---
 
 <div class="drawer drawer-end">
@@ -71,8 +72,33 @@ import { GLOBAL } from "../constants/strings/global.strings";
     <div
       class="bg-base-200 text-base-content menu min-h-full w-full items-start p-8 pt-16 text-2xl font-semibold"
     >
-      <span class="text-neutral flex pb-8 text-3xl">{GLOBAL.site.xuehua}</span>
-      <ul class="flex flex-col gap-8">
+      <div class="flex w-full flex-row items-center justify-between pb-8">
+        <span class="text-neutral flex text-3xl">
+          {GLOBAL.site.xuehua}
+        </span>
+        <!-- close drawer button -->
+        <label
+          for="nav-drawer"
+          aria-label="Close navigation"
+          class="btn btn-ghost btn-square"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-10"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </label>
+      </div>
+
+      <ul class="flex w-full flex-col gap-8">
+        <li class="w-full"><Search /></li>
+        <!--TODO: I hate the chevron here-->
         {
           NAV_LINKS.map((item) =>
             item.children ? (
@@ -99,3 +125,18 @@ import { GLOBAL } from "../constants/strings/global.strings";
     </div>
   </div>
 </div>
+
+<script>
+  const drawer = document.getElementById("nav-drawer");
+  if (drawer instanceof HTMLInputElement) {
+    document.querySelectorAll("[data-close-drawer]").forEach((el) => {
+      el.addEventListener("click", () => {
+        drawer.checked = false;
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") drawer.checked = false;
+    });
+  }
+</script>
