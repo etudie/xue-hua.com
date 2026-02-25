@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import "./fonts.css";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+    name: "xue-hua.com";
+    default: true;
+    prefersdark: true;
+    color-scheme: dark;
+    --color-base-100: oklch(27% 0.006 286.033);
+    --color-base-200: oklch(21% 0.006 56.043);
+    --color-base-300: oklch(27% 0.006 286.033);
+    --color-base-content: oklch(92% 0.003 48.717);
+    --color-primary: #FFCA4B;
+    --color-primary-content: #141414;
+    --color-secondary: #FFE099;
+    --color-secondary-content: #141414;
+    --color-accent: #ef9e6f;
+    --color-accent-content: #141414;
+    --color-neutral: #f0efec;
+    --color-neutral-content: #141414;
+    --color-info: oklch(70% 0.165 254.624);
+    --color-info-content: #141414;
+    --color-success: oklch(77% 0.152 181.912);
+    --color-success-content: #141414;
+    --color-warning: oklch(90% 0.182 98.111);
+    --color-warning-content: #141414;
+    --color-error: oklch(71% 0.194 13.428);
+    --color-error-content: #141414;
+    --radius-selector: 0.5rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.3125rem;
+    --size-field: 0.28125rem;
+    --border: 2px;
+    --depth: 1;
+    --noise: 0;
+}
+
+@theme {
+    --font-sans: 'Open Sans';
+    --font-heading: 'Poppins';
+}
+
+body {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1 { @apply text-3xl md:text-4xl font-bold; }
+h2 { @apply text-2xl md:text-3xl font-semibold; }
+p  { @apply text-base leading-relaxed; }
+
+.text-neutral { color: var(--color-neutral); }
