@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/styles.css";
+import Hero from "../components/Hero.astro";
+---
+
+<!-- TODO: Snap scroll, and make sure face is never covered-->
+<BaseLayout title="Home">
+  <div class="hero h-[calc(100dvh-4rem)] bg-top">
+    <!--bg-[url(../assets/images/hero-overlay.jpg)]-->
+    <div class="hero-overlay"></div>
+    <Hero />
+    <section
+      class="hero-content h-full flex-col justify-between px-8 pt-16 pb-12 text-center"
+    >
+      <div class="flex max-w-md flex-col gap-6 text-shadow-lg">
+        <h1 class="hero-text" data-text="Engineering Purpose">
+          <span class="blur-[1.3px]"> Engineering Purpose</span>
+        </h1>
+        <h6 class="opacity-80">
+          I help thoughtful tech professionals turn ambition into durable
+          execution through clear content and actionable systems
+        </h6>
+      </div>
+      <div class="flex w-full items-center gap-6">
+        <button class="btn btn-primary btn btn-md lg:btn-lg xl:btn-xl flex-1"
+          >Book Xue</button
+        >
+        <button class="btn btn-neutral btn btn-md lg:btn-lg xl:btn-xl flex-1"
+          >Start Exploring</button
+        >
+      </div>
+    </section>
+    <section
+      class="text-base-content/50 flex h-full w-full items-end justify-center pb-6"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 animate-bounce"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"></path>
+      </svg>
+    </section>
+  </div>
+</BaseLayout>
