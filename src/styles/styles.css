@@ -37,6 +37,14 @@
         text-shadow: none;
     }
 }
+
+.stat {
+    @apply gap-4 px-4 py-6;
+}
+
+.stat-title {
+    @apply text-base-content/80;
+}
 /*CSS for dropdown menu*/
 /*.menu {*/
 /*    & :where(li > details > summary), & :where(li > .menu-dropdown-toggle) {*/
