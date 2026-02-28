@@ -13,21 +13,21 @@
 .hero-overlay {
     @apply bg-base-200/30;
 }
+
 .hero-text {
     text-shadow: 0 0 2px #fff, 0 0 3px rgba(0, 0, 0, 0.25), 0 0 50px #fff,
     0 0 50px rgba(255, 202, 75, 1),
     0 0 90px rgba(255, 202, 75, 0.5),
     0 0 150px rgba(255, 255, 255, 0.2),
     0 0 100px rgba(1, 1, 1, 1);
-    @apply text-4xl font-bold;
-    letter-spacing: 0.125rem;
+    @apply text-4xl font-bold leading-tight tracking-wider;
     position: relative;
     &::before {
         content: "";
         position: absolute;
         inset: -1em -2em;
         z-index: -1;
-        @apply backdrop-blur-sm;
+        @apply backdrop-blur-sm max-w-full;
         mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
     }
     &::after {
