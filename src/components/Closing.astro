@@ -2,56 +2,45 @@
 import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg?raw";
 ---
 
-<div class="flex w-full flex-col">
-  <div
-    class="card bg-base-200 text-base-content w-full flex-col gap-6 p-10 text-lg shadow-md"
-  >
-    <h4 class="pb-6 text-4xl">
-      First time here <span class="font-extralight">?</span>
-    </h4>
-    <!--New Here links-->
-    <button class="btn btn-neutral btn-lg btn-soft flex justify-between">
-      Start Here
-      <Fragment set:html={ARROW_RIGHT} />
-    </button>
-
-    <button class="btn btn-neutral btn-lg btn-soft flex justify-between">
-      FAQ <Fragment set:html={ARROW_RIGHT} />
-    </button>
-    <button class="btn btn-primary btn-soft btn-lg flex justify-between">
-      Explore Insights <Fragment set:html={ARROW_RIGHT} />
-    </button>
+<div class="flex w-full flex-col gap-8">
+  <div class="card bg-primary py-3">
+    <div class="card-body gap-6">
+      <h2 class="card-title -mb-4 text-3xl">Industry peers</h2>
+      <div class="flex gap-1 tracking-wide">
+        <div class="badge badge-soft badge-xs">Engineers</div>
+        <div class="badge badge-soft badge-xs">Leaders</div>
+        <div class="badge badge-soft badge-xs">Teams</div>
+      </div>
+      <p class="text-lg">
+        I build systems that intersect code, UX, and AI tooling — shaping
+        experiences users enjoy.
+      </p>
+      <div class="card-actions justify-end">
+        <button class="btn btn-soft"
+          >Read the method
+          <Fragment set:html={ARROW_RIGHT} />
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="w-ful grid-row-2 grid grid-cols-2 gap-8">
-  <div
-    class="card card-md bg-neutral-accent/80 text-base-200 border-neutral-accent col-span-2 gap-2 border-2 px-4 py-4"
-  >
-    <h4 class="card-title">Xue's Resume Guide</h4>
-    <div class="flex justify-end">
-      <div class="badge badge-xs badge-neutral badge-soft opacity-80">
-        Guide
-      </div>
+<div class="card card-border border-base-100/60 py-3">
+  <div class="card-body gap-6">
+    <h2 class="card-title -mb-4 text-3xl">Emerging engineers</h2>
+    <div class="flex gap-1 tracking-wide">
+      <div class="badge badge-soft badge-xs">Early Career</div>
+      <div class="badge badge-soft badge-xs">New Grads</div>
+      <div class="badge badge-soft badge-xs">Students</div>
     </div>
-  </div>
-  <div
-    class="card card-md bg-neutral-accent/80 text-base-200 border-neutral-accent col-span-1 gap-2 border-2 px-4 py-4"
-  >
-    <h4 class="card-title">Surface Area of Luck</h4>
-    <div class="flex justify-end">
-      <div class="badge badge-xs badge-neutral badge-soft opacity-80">
-        Essay
-      </div>
-    </div>
-  </div><div
-    class="card card-md bg-neutral-accent/80 text-base-200 border-neutral-accent col-span-1 gap-2 border-2 px-4 py-4"
-  >
-    <h4 class="card-title">Xue's Resume Guide</h4>
-    <div class="flex justify-end">
-      <div class="badge badge-xs badge-neutral badge-soft opacity-80">
-        Guide
-      </div>
+    <p class="text-lg">
+      Engineering Purpose begins with clarity and systems that grow with you.
+      Here are my guides and resources.
+    </p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-soft"
+        >Start Here <Fragment set:html={ARROW_RIGHT} />
+      </button>
     </div>
   </div>
 </div>

@@ -4,11 +4,11 @@ import { GLOBAL } from "../constants/strings/global.strings";
 import Search from "./Search.astro";
 ---
 
-<div class="drawer drawer-end">
+<div class="drawer drawer-end fixed top-0 left-0 w-full z-50">
   <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
 
   <div class="drawer-content">
-    <div class="navbar bg-base-100 w-full shadow-sm">
+    <div id="navbar-bar" class="navbar w-full transition-all duration-300">
       <div class="flex w-full items-center justify-between">
         <div class="flex-1">
           <a
@@ -132,6 +132,17 @@ import Search from "./Search.astro";
 </div>
 
 <script>
+  const navbar = document.getElementById("navbar-bar");
+  function updateNavbar() {
+    if (window.scrollY > 0) {
+      navbar?.classList.add("bg-base-100", "shadow-sm");
+    } else {
+      navbar?.classList.remove("bg-base-100", "shadow-sm");
+    }
+  }
+  updateNavbar();
+  window.addEventListener("scroll", updateNavbar, { passive: true });
+
   const drawer = document.getElementById("nav-drawer");
   if (drawer instanceof HTMLInputElement) {
     document.querySelectorAll("[data-close-drawer]").forEach((el) => {
