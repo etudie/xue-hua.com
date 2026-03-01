@@ -4,6 +4,7 @@ import "../styles/styles.css";
 import Hero from "../components/Hero.astro";
 import LogoCloud from "../components/LogoCloud.astro";
 import Offer from "../components/MainOffer.astro";
+import Closing from "../components/Closing.astro";
 ---
 
 <!-- TODO: Snap scroll, and make sure face is never covered-->
@@ -93,5 +94,15 @@ import Offer from "../components/MainOffer.astro";
       <div class="divider divider-start divider-accent">Work with Xue</div>
     </div>
     <Offer />
+  </div>
+
+  <!-- PANEL 4 -->
+  <div
+    class="bg-neutral-accent text-neutral-accent-content flex h-[calc(100dvh-4rem)] w-full flex-col p-6"
+  >
+    <div class="flex w-full flex-col">
+      <div class="divider divider-start divider-neutral">Happy you're Here</div>
+    </div>
+    <Closing />
   </div>
 </BaseLayout>

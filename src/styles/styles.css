@@ -39,7 +39,15 @@
 }
 
 .stat {
-    @apply gap-4 px-4 py-6;
+    @apply gap-4 px-4 py-6  ;
+}
+
+
+.stats-vertical {;
+    .stat:not(:last-child) {
+        @apply border-solid border-r-0;
+    }
+
 }
 
 .stat-title {
