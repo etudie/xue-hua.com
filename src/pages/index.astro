@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/styles.css";
 import Hero from "../components/Hero.astro";
+import LogoCloud from "../components/LogoCloud.astro";
+import Offer from "../components/MainOffer.astro";
 ---
 
 <!-- TODO: Snap scroll, and make sure face is never covered-->
@@ -51,12 +53,16 @@ import Hero from "../components/Hero.astro";
   </div>
 
   <!-- PANEL 2 -->
-  <div class="flex w-full flex-col p-8">
+  <div
+    class="flex h-[calc(100dvh-4rem)] w-full flex-col justify-between gap-8 p-6"
+  >
     <div class="flex w-full flex-col">
       <div class="divider divider-start">About the Work</div>
     </div>
 
-    <div class="stats stats-vertical lg:stats-horizontal w-full">
+    <div
+      class="stats stats-vertical lg:stats-horizontal bg-neutral-dark w-full"
+    >
       <div class="stat">
         <div class="stat-title">Clarity over AI complexity</div>
         <div class="stat-value text-primary text-center">100+ sessions</div>
@@ -72,20 +78,20 @@ import Hero from "../components/Hero.astro";
         <div class="stat-value text-center">0% AI theater</div>
       </div>
     </div>
+    <LogoCloud />
 
-    <div
-      class="card card-border bg-neutral-light text-neutral-content card-md w-96 shadow-sm"
-    >
-      <div class="card-body">
-        <h2 class="card-title">Medium Card</h2>
-        <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
-        </p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-accent">Buy Now</button>
-        </div>
-      </div>
+    <div class="flex justify-end">
+      <button class="btn btn-soft btn-primary btn-md">See my work</button>
     </div>
+  </div>
+
+  <!-- PANEL 3 -->
+  <div
+    class="bg-neutral text-neutral-content flex h-[calc(100dvh-4rem)] w-full flex-col justify-between p-6"
+  >
+    <div class="flex w-full flex-col">
+      <div class="divider divider-start divider-accent">Work with Xue</div>
+    </div>
+    <Offer />
   </div>
 </BaseLayout>

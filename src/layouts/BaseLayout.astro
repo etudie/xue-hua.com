@@ -1,48 +1,19 @@
 ---
-import { mergeSeo, toAbsoluteUrl } from "../utils/seo";
-import { SEO_DEFAULTS } from "../constants/strings/seo.strings.ts";
-
-type Props = {
-    seo?: import("../utils/seo").SeoMeta;
-};
-
-const { seo: seoOverrides = {} } = Astro.props;
-
-const resolvedSeo = mergeSeo(SEO_DEFAULTS, {
-    ...seoOverrides,
-    canonical: seoOverrides.canonical ?? (Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : ""),
-});
-
-// Make images absolute for best compatibility
-const ogImage = toAbsoluteUrl(Astro.site, resolvedSeo.openGraph.image);
-const twImage = toAbsoluteUrl(Astro.site, resolvedSeo.twitter.image);
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import BaseHead from "./BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+const { title } = Astro.props;
 ---
 
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <BaseHead title={title} />
+  <body class="flex min-h-screen flex-col">
+    <Navbar />
+    <main class="flex-1 pt-16">
+      <slot />
+    </main>
 
-    <title>{resolvedSeo.title}</title>
-    <meta name="description" content={resolvedSeo.description} />
-    <meta name="robots" content={resolvedSeo.robots} />
-
-    {resolvedSeo.canonical && <link rel="canonical" href={resolvedSeo.canonical} />}
-
-    <!-- Open Graph -->
-    <meta property="og:title" content={resolvedSeo.openGraph.title} />
-    <meta property="og:description" content={resolvedSeo.openGraph.description} />
-    <meta property="og:type" content={resolvedSeo.openGraph.type} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content={resolvedSeo.twitter.card} />
-    <meta name="twitter:title" content={resolvedSeo.twitter.title} />
-    <meta name="twitter:description" content={resolvedSeo.twitter.description} />
-    {twImage && <meta name="twitter:image" content={twImage} />}
-</head>
-
-<body>
-<slot />
-</body>
+    <Footer />
+  </body>
 </html>
