@@ -1,0 +1,57 @@
+---
+import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg?raw";
+---
+
+<div class="flex w-full flex-col">
+  <div
+    class="card bg-base-200 text-base-content w-full flex-col gap-6 p-10 text-lg shadow-md"
+  >
+    <h4 class="pb-6 text-4xl">
+      First time here <span class="font-extralight">?</span>
+    </h4>
+    <!--New Here links-->
+    <button class="btn btn-neutral btn-lg btn-soft flex justify-between">
+      Start Here
+      <Fragment set:html={ARROW_RIGHT} />
+    </button>
+
+    <button class="btn btn-neutral btn-lg btn-soft flex justify-between">
+      FAQ <Fragment set:html={ARROW_RIGHT} />
+    </button>
+    <button class="btn btn-primary btn-soft btn-lg flex justify-between">
+      Explore Insights <Fragment set:html={ARROW_RIGHT} />
+    </button>
+  </div>
+</div>
+
+<div class="w-ful grid-row-2 grid grid-cols-2 gap-8">
+  <div
+    class="card card-md bg-neutral-accent/80 text-base-200 border-neutral-accent col-span-2 gap-2 border-2 px-4 py-4"
+  >
+    <h4 class="card-title">Xue's Resume Guide</h4>
+    <div class="flex justify-end">
+      <div class="badge badge-xs badge-neutral badge-soft opacity-80">
+        Guide
+      </div>
+    </div>
+  </div>
+  <div
+    class="card card-md bg-neutral-accent/80 text-base-200 border-neutral-accent col-span-1 gap-2 border-2 px-4 py-4"
+  >
+    <h4 class="card-title">Surface Area of Luck</h4>
+    <div class="flex justify-end">
+      <div class="badge badge-xs badge-neutral badge-soft opacity-80">
+        Essay
+      </div>
+    </div>
+  </div><div
+    class="card card-md bg-neutral-accent/80 text-base-200 border-neutral-accent col-span-1 gap-2 border-2 px-4 py-4"
+  >
+    <h4 class="card-title">Xue's Resume Guide</h4>
+    <div class="flex justify-end">
+      <div class="badge badge-xs badge-neutral badge-soft opacity-80">
+        Guide
+      </div>
+    </div>
+  </div>
+</div>
