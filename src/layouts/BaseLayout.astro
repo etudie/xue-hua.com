@@ -10,7 +10,7 @@ const { backgroundColor } = Astro.props;
   <BaseHead seo={{title: "Home"}} />
   <body class="flex min-h-svh flex-col">
     <Navbar />
-    <main class="flex-1 snap-pt-16 pt-[calc(4rem+env(safe-area-inset-top))]">
+    <main class="flex-1">
       <slot />
     </main>
     <Footer />
