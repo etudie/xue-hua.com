@@ -17,7 +17,19 @@
     @apply col-start-1 row-start-1 h-full w-full bg-linear-to-t from-transparent to-base-200/30 to-80% ;
 }
 .hero-overlay-top {
-    @apply col-start-1 row-start-1 h-full w-full bg-linear-to-t from-transparent via-transparent to-base-200 to-95% ;
+    @apply col-start-1 row-start-1 h-full w-full bg-linear-to-t from-transparent via-transparent to-primary/10 to-95% ;
+}
+
+.glow {
+    position: absolute;
+    @apply -m-6 w-2/3
+}
+.glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 202, 75, .2) 0%, rgba(255, 202, 75, 0) 50%);
 }
 
 .hero-text {

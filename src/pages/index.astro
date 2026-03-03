@@ -6,17 +6,30 @@ import LogoCloud from "../components/LogoCloud.astro";
 import Offer from "../components/MainOffer.astro";
 import Closing from "../components/Closing.astro";
 import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg?raw";
+import FIREFLY from "../assets/hero-firefly.mp4";
 ---
 
 <!-- TODO: Snap scroll, and make sure face is never covered-->
 <BaseLayout title="Home">
-  <div
-    class="hero h-dvh bg-[url(../assets/images/hero/hero-main.webp)] saturate-120"
-  >
-    <!--bg-[url(../assets/images/hero-overlay.jpg)]-->
+  <div class="hero h-dvh bg-black">
+    <div
+      class="absolute flex h-screen items-end justify-center overflow-hidden object-cover"
+    >
+      <video
+        autoplay
+        loop
+        muted
+        class="h-2/3 mask-t-from-50% object-cover opacity-60"
+        id="hero-video"
+      >
+        <source src={FIREFLY} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!--bg-[url(../assets/images/hero/hero-main.webp)] saturate-120-->
     <!--<div class="hero-overlay"></div>-->
-    <div class="hero-overlay-gradient"></div>
-    <div class="hero-overlay-top"></div>
+    <!--<div class="hero-overlay-gradient"></div>-->
+    <!--<div class="hero-overlay-top"></div>-->
     <!--<Hero />-->
     <section
       class="hero-content h-full flex-col justify-between px-8 py-24 text-center"
@@ -114,3 +127,7 @@ import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg?raw";
     <Closing />
   </div>
 </BaseLayout>
+<script>
+  const video = document.getElementById("hero-video");
+  video.playbackRate = 0.7; // slower than normal
+</script>
