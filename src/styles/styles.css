@@ -9,6 +9,10 @@
     }
 }
 
+.hero-content {
+    @apply py-0;
+}
+
 .hero-overlay {
     @apply bg-secondary/10
 }
