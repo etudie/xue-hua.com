@@ -10,6 +10,7 @@ import FIREFLY from "../assets/hero-firefly.mp4";
 
 <!-- TODO: Snap scroll, and make sure face is never covered-->
 <BaseLayout title="Home" backgroundColor="bg-black">
+  <!-- PANEL 1 -->
   <div class="hero h-screen bg-black">
     <div
       class="absolute flex h-screen items-end justify-center overflow-hidden object-cover"
@@ -18,6 +19,9 @@ import FIREFLY from "../assets/hero-firefly.mp4";
         autoplay
         loop
         muted
+        playsinline
+        preload="auto"
+        aria-hidden="true"
         class="h-2/3 mask-t-from-50% object-cover opacity-60"
         id="hero-video"
       >
@@ -126,9 +130,25 @@ import FIREFLY from "../assets/hero-firefly.mp4";
     <Closing />
   </div>
 </BaseLayout>
+
 <script>
-  const video = document.getElementById("hero-video") as HTMLVideoElement | null;
-  if (video) {
+  const video = document.getElementById("hero-video");
+
+  if (video instanceof HTMLVideoElement) {
+    video.muted = true;
+    video.playsInline = true;
     video.playbackRate = 0.7; // slower than normal
+
+    const tryPlay = async () => {
+      try { await video.play(); } catch {}
+    };
+
+    // Try immediately
+    tryPlay();
+
+    // Retry once on first user interaction (common iOS behavior)
+    const once = () => { tryPlay(); window.removeEventListener("touchstart", once); window.removeEventListener("click", once); };
+    window.addEventListener("touchstart", once, { passive: true });
+    window.addEventListener("click", once, { passive: true });
   }
 </script>
