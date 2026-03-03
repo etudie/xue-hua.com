@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/styles.css";
-import Hero from "../components/Hero.astro";
 import LogoCloud from "../components/LogoCloud.astro";
 import Offer from "../components/MainOffer.astro";
 import Closing from "../components/Closing.astro";
@@ -74,7 +73,7 @@ import FIREFLY from "../assets/hero-firefly.mp4";
 
   <!-- PANEL 2 -->
   <div
-    class="flex h-[calc(100vh-4rem)] w-full flex-col justify-between gap-8 p-6"
+    class="flex min-h-[calc(100svh-4rem)] w-full flex-col justify-between gap-8 p-6"
   >
     <div class="flex w-full flex-col">
       <div class="divider divider-start">About the Work</div>
@@ -109,7 +108,7 @@ import FIREFLY from "../assets/hero-firefly.mp4";
 
   <!-- PANEL 3 -->
   <div
-    class="bg-neutral text-neutral-content flex h-[calc(100vh-4rem)] w-full flex-col justify-between p-6"
+    class="bg-neutral text-neutral-content flex min-h-[calc(100svh-4rem)] w-full flex-col justify-between p-6"
   >
     <div class="flex w-full flex-col">
       <div class="divider divider-start divider-accent">Work with Xue</div>
@@ -119,7 +118,7 @@ import FIREFLY from "../assets/hero-firefly.mp4";
 
   <!-- PANEL 4 -->
   <div
-    class="bg-neutral-light text-neutral-accent-content flex h-[calc(100vh-4rem)] w-full flex-col gap-8 p-6"
+    class="bg-neutral-light text-neutral-accent-content flex min-h-[calc(100svh-4rem)] w-full flex-col gap-8 p-6"
   >
     <div class="flex w-full flex-col">
       <div class="divider divider-start after:bg-base-100">Explore Content</div>
@@ -128,6 +127,8 @@ import FIREFLY from "../assets/hero-firefly.mp4";
   </div>
 </BaseLayout>
 <script>
-  const video = document.getElementById("hero-video");
-  video.playbackRate = 0.7; // slower than normal
+  const video = document.getElementById("hero-video") as HTMLVideoElement | null;
+  if (video) {
+    video.playbackRate = 0.7; // slower than normal
+  }
 </script>
