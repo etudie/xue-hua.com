@@ -5,18 +5,23 @@ import Hero from "../components/Hero.astro";
 import LogoCloud from "../components/LogoCloud.astro";
 import Offer from "../components/MainOffer.astro";
 import Closing from "../components/Closing.astro";
+import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg?raw";
 ---
 
 <!-- TODO: Snap scroll, and make sure face is never covered-->
 <BaseLayout title="Home">
-  <div class="hero h-dvh bg-top">
+  <div
+    class="hero h-dvh bg-[url(../assets/images/hero/hero-main.webp)] saturate-120"
+  >
     <!--bg-[url(../assets/images/hero-overlay.jpg)]-->
-    <div class="hero-overlay"></div>
-    <Hero />
+    <!--<div class="hero-overlay"></div>-->
+    <div class="hero-overlay-gradient"></div>
+    <div class="hero-overlay-top"></div>
+    <!--<Hero />-->
     <section
       class="hero-content h-full flex-col justify-between px-8 py-24 text-center"
     >
-      <div class="flex max-w-md flex-col gap-8">
+      <div class="flex max-w-md flex-1 flex-col justify-center gap-8">
         <h1 class="hero-text font-semibold" data-text="Engineering Purpose">
           <span class="blur-[1.3px]"> Engineering Purpose</span>
         </h1>
@@ -24,6 +29,7 @@ import Closing from "../components/Closing.astro";
         <h6 class="hero-subtitle leading-relaxed opacity-80 text-shadow-md">
           I make AI click for your people.<br />Clear systems. Real results.
         </h6>
+        <p class="size-1/3"></p>
       </div>
       <div class="flex w-full flex-col gap-6">
         <button class="btn btn-primary btn-md"> Schedule a Workshop</button>
@@ -82,7 +88,9 @@ import Closing from "../components/Closing.astro";
     <LogoCloud />
 
     <div class="flex justify-end">
-      <button class="btn btn-soft btn-primary btn-md">See my work</button>
+      <button class="btn btn-soft btn-primary btn-md"
+        >See my work <Fragment set:html={ARROW_RIGHT} />
+      </button>
     </div>
   </div>
 
