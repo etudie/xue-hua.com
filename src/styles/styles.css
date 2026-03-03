@@ -20,8 +20,15 @@
 .hero-overlay-gradient {
     @apply col-start-1 row-start-1 h-full w-full bg-linear-to-t from-transparent to-base-200/30 to-80% ;
 }
+
+.hero-overlay-container{
+    @apply absolute h-8/10 w-full ;
+}
 .hero-overlay-top {
-    @apply col-start-1 row-start-1 h-full w-full bg-linear-to-t from-transparent via-transparent to-primary/10 to-95% ;
+    @apply absolute h-full w-full bg-linear-to-b from-black to-10% to-transparent;
+}
+.hero-overlay-bottom {
+    @apply absolute h-full w-full bg-linear-to-t from-black to-20% to-transparent;
 }
 
 .glow {

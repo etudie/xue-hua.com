@@ -22,12 +22,16 @@ import FIREFLY from "../assets/hero-firefly.mp4";
         playsinline
         preload="auto"
         aria-hidden="true"
-        class="h-8/10 mask-t-from-90% mask-b-from-80% object-cover opacity-80"
+        class="h-8/10 object-cover opacity-80"
         id="hero-video"
       >
         <source src={FIREFLY} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <div class="hero-overlay-container">
+        <div class="hero-overlay-top"></div>
+        <div class="hero-overlay-bottom"></div>
+      </div>
     </div>
 
     <!--hero content container-->
