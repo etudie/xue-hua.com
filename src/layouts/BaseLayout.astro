@@ -3,14 +3,14 @@ import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import BaseHead from "./BaseHead.astro";
 import Navbar from "../components/Navbar.astro";
-const { title } = Astro.props;
+const { backgroundColor } = Astro.props;
 ---
 
-<html lang="en">
-  <BaseHead title={title} />
+<html lang="en" class=`${backgroundColor}`>
+  <BaseHead seo={{title: "Home"}} />
   <body class="flex min-h-svh flex-col">
+    <Navbar />
     <main class="flex-1 snap-pt-16 pt-[calc(4rem+env(safe-area-inset-top))]">
-      <Navbar />
       <slot />
     </main>
     <Footer />
