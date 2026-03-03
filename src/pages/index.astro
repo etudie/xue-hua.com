@@ -12,7 +12,7 @@ import FIREFLY from "../assets/hero-firefly.mp4";
 <BaseLayout title="Home" backgroundColor="bg-black">
   <!-- PANEL 1 -->
   <!-- panel 1 container, for sizing -->
-  <div class="h-svh bg-black">
+  <div class="flex h-svh w-full bg-black">
     <!-- hero video -->
     <div class="absolute flex h-full w-full items-center overflow-hidden">
       <video
@@ -35,13 +35,13 @@ import FIREFLY from "../assets/hero-firefly.mp4";
     </div>
 
     <!--hero content container-->
-    <div class="hero flex h-svh flex-col gap-8">
+    <div class="hero flex flex-col gap-8">
       <!-- hero content-->
       <section
         class="hero-content flex-1 flex-col justify-between px-8 text-center"
       >
         <!--title-->
-        <div class="flex max-w-md flex-1 flex-col justify-center gap-8">
+        <div class="flex flex-1 flex-col justify-center gap-8">
           <h1 class="hero-text font-semibold" data-text="Engineering Purpose">
             <span class="blur-[1.3px]"> Engineering Purpose</span>
           </h1>
