@@ -18,11 +18,11 @@ import UW_LOGO from "../assets/images/logos/washington.svg?raw";
 
 const logos: Logo[] = [
   { name: "Microsoft", rawSvg: MICROSOFT_LOGO },
-  { name: "Tesla", rawSvg: TESLA_LOGO, scale: "scale-[0.92]" },
-  { name: "Harvard", rawSvg: HARVARD_LOGO },
-  { name: "University of Washington", rawSvg: UW_LOGO },
-  { name: "GVSU", rawSvg: GVSU_LOGO, scale: "scale-[1.05]" },
-  { name: "Berkeley", rawSvg: BERKELEY_LOGO },
+  { name: "Tesla", rawSvg: TESLA_LOGO },
+  { name: "Berkeley", rawSvg: BERKELEY_LOGO},
+  { name: "Harvard", rawSvg: HARVARD_LOGO},
+  { name: "GVSU", rawSvg: GVSU_LOGO, scale: "scale-[1.2]"},
+  { name: "University of Washington", rawSvg: UW_LOGO}
 ];
 
 // Mobile cap: 6 logos is a great default.
@@ -31,14 +31,14 @@ const mobileMax = 6;
 const mobileLogos = logos.slice(0, mobileMax);
 ---
 
-<section class="px-6">
-  <div class="card card-xs gap-6 text-center">
+<section class="px-4">
+  <div class="card card-xs gap-4 text-center">
     <h2 class="card-title w-full justify-center opacity-85">Engineered & mentored at</h2>
-    <div class="text-base-content grid grid-cols-2 gap-8 justify-center items-center">
+    <div class="text-base-content grid grid-cols-3 gap-8 justify-center items-center">
       {
         mobileLogos.map((logo) => (
           <div
-            class=`opacity-70 flex items-center justify-center ${logo.scale ?? ""} h-7`
+            class=`opacity-70 flex items-center justify-center ${logo.scale ?? ""}`
             aria-label={logo.name}
           >
             {logo.rawSvg ? (
