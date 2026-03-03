@@ -1,0 +1,110 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const pageTitle = "404 — Page not found";
+const description = "This page doesn’t exist (or it moved).";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+
+  <body>
+    <!-- If Navbar has interactivity (dropdowns, mobile menu), hydrate it -->
+    <Navbar client:load />
+
+    <main class="page">
+      <section class="content" aria-labelledby="not-found-title">
+        <p class="eyebrow">404</p>
+
+        <h1 id="not-found-title" class="title">Page not found</h1>
+
+        <p class="subtitle">
+          The link is broken, the page moved, or this route never existed.
+        </p>
+
+        <div class="actions">
+          <a class="btn primary" href="/">Go home</a>
+          <button class="btn ghost" type="button" onclick="history.back()">
+            Go back
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <Footer client:load />
+  </body>
+</html>
+
+<style>
+  :global(body) {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .page {
+    padding: clamp(24px, 5vw, 72px) 16px;
+  }
+
+  .content {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 12px;
+  }
+
+  .title {
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.05;
+    margin: 0 0 12px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+    opacity: 0.85;
+    max-width: 60ch;
+    margin-bottom: 28px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid currentColor;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .btn.primary {
+    background: currentColor;
+    color: white;
+    border-color: transparent;
+  }
+
+  .btn.ghost {
+    opacity: 0.85;
+  }
+</style>
