@@ -7,8 +7,9 @@ const { backgroundColor } = Astro.props;
 ---
 
 <html lang="en" class=`${backgroundColor}`>
-  <BaseHead seo={{title: "Home"}} />
-  <body class="flex min-h-screen flex-col justify-between">
+  <BaseHead seo={{ title: "Home" }} />
+  /* TODO: Maybe can make min-height */
+  <body class="flex flex-col justify-between">
     <Navbar />
     <main class="flex-1">
       <slot />
