@@ -6,8 +6,7 @@ import Navbar from "../components/Navbar.astro";
 const { backgroundColor } = Astro.props;
 ---
 
-<html lang="en" class=`${backgroundColor}`>
-  <BaseHead seo={{ title: "Home" }} />
+<BaseHead seo={{ title: "Home" }}>
   /* TODO: Maybe can make min-height */
   <body class="flex flex-col justify-between">
     <Navbar />
@@ -16,4 +15,4 @@ const { backgroundColor } = Astro.props;
     </main>
     <Footer />
   </body>
-</html>
+</BaseHead>
