@@ -50,6 +50,9 @@
     --color-neutral-dark: #141414;
 }
 
+html {
+    @apply w-screen h-screen;
+}
 body {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
