@@ -1,85 +1,89 @@
-@plugin "daisyui"{
-    themes: default;
+@plugin "daisyui" {
+  themes: default;
 }
 
 .hero {
-    @apply place-items-start text-base-content ;
-    & > * {
-    }
+  @apply text-base-content place-items-start;
+  & > * {
+  }
 }
 
 .hero-content {
-    @apply py-0;
+  @apply py-0;
 }
 
 .hero-overlay {
-    @apply bg-secondary/10
+  @apply bg-secondary/10;
 }
 
 .hero-overlay-gradient {
-    @apply col-start-1 row-start-1 h-full w-full bg-linear-to-t from-transparent to-base-200/30 to-80% ;
+  @apply to-base-200/30 col-start-1 row-start-1 h-full w-full bg-linear-to-t from-transparent to-80%;
 }
 
-.hero-overlay-container{
-    @apply absolute h-8/10 w-full ;
+.hero-overlay-container {
+  @apply absolute h-8/10 w-full;
 }
 .hero-overlay-top {
-    @apply absolute h-full w-full bg-linear-to-b from-black to-10% to-transparent;
+  @apply absolute h-full w-full bg-linear-to-b from-black to-transparent to-10%;
 }
 .hero-overlay-bottom {
-    @apply absolute h-full w-full bg-linear-to-t from-black to-20% to-transparent;
+  @apply absolute h-full w-full bg-linear-to-t from-black to-transparent to-20%;
 }
 
 .glow {
-    position: absolute;
-    @apply -m-6 w-2/3
+  position: absolute;
+  @apply -m-6 w-2/3;
 }
 .glow::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(circle at 20% 30%, rgba(255, 202, 75, .2) 0%, rgba(255, 202, 75, 0) 50%);
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(255, 202, 75, 0.2) 0%,
+    rgba(255, 202, 75, 0) 50%
+  );
 }
 
 .hero-text {
-    text-shadow: 0 0 2px rgb(255, 255, 255), 0 0 3px rgba(0, 0, 0, 0.25), 0 0 10px rgb(255, 255, 255,0.3),
-    /*0 0 50px rgba(255, 202, 0, 0.2),*/
-    /*0 0 90px rgba(255, 202, 75, 0.1),*/
-    0 0 150px rgba(255, 255, 255, 0.2),
+  text-shadow:
+    0 0 2px rgb(255, 255, 255),
+    0 0 3px rgba(0, 0, 0, 0.25),
+    0 0 10px rgb(255, 255, 255, 0.3),
+    /*0 0 50px rgba(255, 202, 0, 0.2),*/ /*0 0 90px rgba(255, 202, 75, 0.1),*/ 0 0 150px
+      rgba(255, 255, 255, 0.2),
     0 0 100px rgba(1, 1, 1, 1);
-    @apply text-5xl font-bold leading-tight tracking-wider;
-    position: relative;
-    &::before {
-        content: "";
-        position: absolute;
-        inset: -1em -2em;
-        z-index: -1;
-        @apply backdrop-blur-sm max-w-full;
-        mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
-    }
-    &::after {
-        content: attr(data-text);
-        position: absolute;
-        inset: 0;
-        text-shadow: none;
-    }
+  @apply text-5xl leading-tight font-bold tracking-wider;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1em -2em;
+    z-index: -1;
+    @apply max-w-full backdrop-blur-sm;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  }
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    text-shadow: none;
+  }
 }
 
 .stat {
-    @apply gap-4 px-4 py-6  ;
+  @apply gap-4 px-4 py-6;
 }
 
-
-.stats-vertical {;
-    .stat:not(:last-child) {
-        @apply border-solid border-r-0;
-    }
-
+.stats-vertical {
+  .stat:not(:last-child) {
+    @apply border-r-0 border-solid;
+  }
 }
 
 .stat-title {
-    @apply text-base-content/80;
+  @apply text-base-content/80;
 }
 /*CSS for dropdown menu*/
 /*.menu {*/

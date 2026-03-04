@@ -60,18 +60,13 @@ export function mergeSeo(defaults: any, page: SeoMeta): Required<SeoMeta> {
  * If you want absolute URLs for images/canonical in meta tags.
  * In Astro pass Astro.site to this.
  */
-export function toAbsoluteUrl(
-  site: URL | undefined,
-  maybePath: string,
-): string {
+export function toAbsoluteUrl(site: URL | undefined, maybePath: string): string {
   if (!maybePath) return "";
   try {
     // already absolute
     return new URL(maybePath).toString();
   } catch {
     // relative path -> make absolute
-    return site
-      ? new URL(maybePath.replace(/^\//, ""), site).toString()
-      : maybePath;
+    return site ? new URL(maybePath.replace(/^\//, ""), site).toString() : maybePath;
   }
 }

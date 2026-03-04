@@ -1,5 +1,5 @@
 ---
-import type { ImageMetadata } from 'astro';
+import type { ImageMetadata } from "astro";
 
 type Logo = {
   name: string;
@@ -9,20 +9,20 @@ type Logo = {
   href?: string;
 };
 
-import BERKELEY_LOGO from '../assets/images/logos/berkeley.svg?raw';
-import GVSU_LOGO from '../assets/images/logos/gvsu.svg?raw';
-import HARVARD_LOGO from '../assets/images/logos/harvard.svg?raw';
-import TESLA_LOGO from '../assets/images/logos/tesla.svg?raw';
-import MICROSOFT_LOGO from '../assets/images/logos/microsoft.svg?raw';
-import UW_LOGO from '../assets/images/logos/washington.svg?raw';
+import BERKELEY_LOGO from "../assets/images/logos/berkeley.svg?raw";
+import GVSU_LOGO from "../assets/images/logos/gvsu.svg?raw";
+import HARVARD_LOGO from "../assets/images/logos/harvard.svg?raw";
+import TESLA_LOGO from "../assets/images/logos/tesla.svg?raw";
+import MICROSOFT_LOGO from "../assets/images/logos/microsoft.svg?raw";
+import UW_LOGO from "../assets/images/logos/washington.svg?raw";
 
 const logos: Logo[] = [
-  { name: 'Microsoft', rawSvg: MICROSOFT_LOGO },
-  { name: 'Tesla', rawSvg: TESLA_LOGO },
-  { name: 'Berkeley', rawSvg: BERKELEY_LOGO },
-  { name: 'Harvard', rawSvg: HARVARD_LOGO },
-  { name: 'GVSU', rawSvg: GVSU_LOGO, scale: 'scale-[1.2]' },
-  { name: 'University of Washington', rawSvg: UW_LOGO },
+  { name: "Microsoft", rawSvg: MICROSOFT_LOGO },
+  { name: "Tesla", rawSvg: TESLA_LOGO },
+  { name: "Berkeley", rawSvg: BERKELEY_LOGO },
+  { name: "Harvard", rawSvg: HARVARD_LOGO },
+  { name: "GVSU", rawSvg: GVSU_LOGO, scale: "scale-[1.2]" },
+  { name: "University of Washington", rawSvg: UW_LOGO },
 ];
 
 // Mobile cap: 6 logos is a great default.
@@ -38,7 +38,7 @@ const mobileLogos = logos.slice(0, mobileMax);
       {
         mobileLogos.map((logo) => (
           <div
-            class={`flex items-center justify-center opacity-70 ${logo.scale ?? ''}`}
+            class={`flex items-center justify-center opacity-70 ${logo.scale ?? ""}`}
             aria-label={logo.name}
           >
             {logo.rawSvg ? (
@@ -47,7 +47,7 @@ const mobileLogos = logos.slice(0, mobileMax);
               </span>
             ) : (
               <img
-                src={typeof logo.src === 'string' ? logo.src : logo.src?.src}
+                src={typeof logo.src === "string" ? logo.src : logo.src?.src}
                 alt={logo.name}
                 class="h-full w-full object-contain transition group-hover:opacity-0"
                 loading="lazy"

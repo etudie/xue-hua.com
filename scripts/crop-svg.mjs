@@ -2,8 +2,7 @@ import fs from "node:fs";
 import bounds from "svg-path-bounds";
 
 const file = process.argv[2];
-if (!file)
-  throw new Error("Usage: node scripts/crop-viewbox.mjs path/to/logo.svg");
+if (!file) throw new Error("Usage: node scripts/crop-viewbox.mjs path/to/logo.svg");
 
 const svg = fs.readFileSync(file, "utf8");
 

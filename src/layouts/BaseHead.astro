@@ -28,11 +28,7 @@ const twImage = toAbsoluteUrl(Astro.site, resolvedSeo.twitter.image);
   <meta name="description" content={resolvedSeo.description} />
   <meta name="robots" content={resolvedSeo.robots} />
 
-  {
-    resolvedSeo.canonical && (
-      <link rel="canonical" href={resolvedSeo.canonical} />
-    )
-  }
+  {resolvedSeo.canonical && <link rel="canonical" href={resolvedSeo.canonical} />}
 
   <!-- Open Graph -->
   <meta property="og:title" content={resolvedSeo.openGraph.title} />
