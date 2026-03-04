@@ -20,41 +20,29 @@ const ogImage = toAbsoluteUrl(Astro.site, resolvedSeo.openGraph.image);
 const twImage = toAbsoluteUrl(Astro.site, resolvedSeo.twitter.image);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{resolvedSeo.title}</title>
-    <meta name="description" content={resolvedSeo.description} />
-    <meta name="robots" content={resolvedSeo.robots} />
+  <title>{resolvedSeo.title}</title>
+  <meta name="description" content={resolvedSeo.description} />
+  <meta name="robots" content={resolvedSeo.robots} />
 
-    {
-      resolvedSeo.canonical && (
-        <link rel="canonical" href={resolvedSeo.canonical} />
-      )
-    }
+  {
+    resolvedSeo.canonical && (
+      <link rel="canonical" href={resolvedSeo.canonical} />
+    )
+  }
 
-    <!-- Open Graph -->
-    <meta property="og:title" content={resolvedSeo.openGraph.title} />
-    <meta
-      property="og:description"
-      content={resolvedSeo.openGraph.description}
-    />
-    <meta property="og:type" content={resolvedSeo.openGraph.type} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+  <!-- Open Graph -->
+  <meta property="og:title" content={resolvedSeo.openGraph.title} />
+  <meta property="og:description" content={resolvedSeo.openGraph.description} />
+  <meta property="og:type" content={resolvedSeo.openGraph.type} />
+  {ogImage && <meta property="og:image" content={ogImage} />}
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content={resolvedSeo.twitter.card} />
-    <meta name="twitter:title" content={resolvedSeo.twitter.title} />
-    <meta
-      name="twitter:description"
-      content={resolvedSeo.twitter.description}
-    />
-    {twImage && <meta name="twitter:image" content={twImage} />}
-  </head>
-
-  <slot />
-
-
-</html>
+  <!-- Twitter -->
+  <meta name="twitter:card" content={resolvedSeo.twitter.card} />
+  <meta name="twitter:title" content={resolvedSeo.twitter.title} />
+  <meta name="twitter:description" content={resolvedSeo.twitter.description} />
+  {twImage && <meta name="twitter:image" content={twImage} />}
+</head>
