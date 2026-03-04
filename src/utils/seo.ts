@@ -22,7 +22,19 @@ export type SeoMeta = {
   twitter?: TwitterMeta;
 };
 
-export function mergeSeo(defaults: any, page: SeoMeta): Required<SeoMeta> {
+type DefaultType = {
+  siteName: string;
+  titleTemplate: string;
+  defaultDescription: string;
+
+  robots: string;
+
+  openGraph: OpenGraphMeta;
+
+  twitter: TwitterMeta;
+};
+
+export function mergeSeo(defaults: DefaultType | undefined, page: SeoMeta): Required<SeoMeta> {
   const title = page.title ?? defaults.siteName;
   const description = page.description ?? defaults.defaultDescription;
 

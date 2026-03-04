@@ -1,21 +1,39 @@
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import astro from "eslint-plugin-astro";
+import globals from "globals";
+import { defineConfig } from "eslint/config";
 
-export default [
+export default defineConfig([
+  {
+    ignores: ["node_modules", "dist", ".astro", "coverage", "*.config.js", "*.config.mjs"],
+  },
+
   js.configs.recommended,
 
-  // TypeScript rules (works for .ts/.tsx)
   ...tseslint.configs.recommended,
 
-  // Astro rules (includes parsing + .astro support)
   ...astro.configs.recommended,
 
-  // Optional: if you're using React in .tsx, you can add react linting later.
-  // (Keeping this minimal unless you explicitly want react hooks + jsx-a11y.)
-
-  // Prevent formatting conflicts with Prettier
   {
-    rules: {},
+    files: ["scripts/**/*.mjs", "scripts/**/*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
   },
-];
+
+  {
+    rules: {
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
+      "@typescript-eslint/no-explicit-any": "warn",
+    },
+  },
+]);
