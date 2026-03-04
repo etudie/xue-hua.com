@@ -13,7 +13,7 @@ import FIREFLY from "../assets/hero-firefly.mp4";
   <!-- panel 1 container, for sizing -->
   <div class="flex h-svh w-full bg-black">
     <!-- hero video -->
-    <div class="absolute flex h-full w-full items-center overflow-hidden">
+    <div class="absolute flex size-full items-center overflow-hidden">
       <video
         autoplay
         loop
@@ -36,7 +36,9 @@ import FIREFLY from "../assets/hero-firefly.mp4";
     <!--hero content container-->
     <div class="hero flex flex-col gap-8">
       <!-- hero content-->
-      <section class="hero-content flex-1 flex-col justify-between px-8 text-center">
+      <section class="
+        hero-content flex-1 flex-col justify-between px-8 text-center
+      ">
         <!--title-->
         <div class="flex flex-1 flex-col justify-center gap-8">
           <h1 class="hero-text font-semibold" data-text="Engineering Purpose">
@@ -50,15 +52,17 @@ import FIREFLY from "../assets/hero-firefly.mp4";
 
         <!--CTA buttons-->
         <div class="flex w-full flex-col gap-8">
-          <button class="btn btn-primary btn-md"> Schedule a Workshop</button>
-          <button class="btn btn-md btn-outline text-neutral-light backdrop-blur-md">
+          <button class="btn btn-md btn-primary"> Schedule a Workshop</button>
+          <button class="
+            btn text-neutral-light backdrop-blur-md btn-outline btn-md
+          ">
             Explore Resources</button
           >
         </div>
       </section>
 
       <!--down arrow-->
-      <div class="text-base-content/80 flex w-full items-center justify-center">
+      <div class="flex w-full items-center justify-center text-base-content/80">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -77,18 +81,23 @@ import FIREFLY from "../assets/hero-firefly.mp4";
   </div>
 
   <!-- PANEL 2 -->
-  <div class="bg-neutral-dark flex h-svh w-full flex-col justify-between gap-8 p-6">
+  <div class="
+    flex h-svh w-full flex-col justify-between gap-8 bg-neutral-dark p-6
+  ">
     <div class="divider divider-start">About the Work</div>
 
-    <div class="stats stats-vertical lg:stats-horizontal w-full flex-1">
+    <div class="
+      stats w-full flex-1 stats-vertical
+      lg:stats-horizontal
+    ">
       <div class="stat">
         <div class="stat-title">Clarity over AI complexity</div>
-        <div class="stat-value text-primary text-center text-2xl">100+ sessions</div>
+        <div class="stat-value text-center text-2xl text-primary">100+ sessions</div>
       </div>
 
       <div class="stat">
         <div class="stat-title">Execution for the overwhelmed</div>
-        <div class="stat-value text-secondary text-center text-2xl">50+ engineers</div>
+        <div class="stat-value text-center text-2xl text-secondary">50+ engineers</div>
       </div>
 
       <div class="stat">
@@ -99,14 +108,17 @@ import FIREFLY from "../assets/hero-firefly.mp4";
     <LogoCloud />
 
     <div class="flex justify-end">
-      <button class="btn btn-soft btn-primary btn-md"
+      <button class="btn btn-soft btn-md btn-primary"
         >See my work <Fragment set:html={ARROW_RIGHT} />
       </button>
     </div>
   </div>
 
   <!-- PANEL 3 -->
-  <div class="bg-neutral text-neutral-content flex h-svh w-full flex-col justify-between p-6">
+  <div class="
+    flex h-svh w-full flex-col justify-between bg-neutral p-6
+    text-neutral-content
+  ">
     <div class="flex w-full flex-col">
       <div class="divider divider-start divider-accent">Work with Xue</div>
     </div>
@@ -114,9 +126,15 @@ import FIREFLY from "../assets/hero-firefly.mp4";
   </div>
 
   <!-- PANEL 4 -->
-  <div class="bg-neutral-light text-neutral-accent-content flex h-svh w-full flex-col gap-8 p-6">
+  <div class="
+    flex h-svh w-full flex-col gap-8 bg-neutral-light p-6
+    text-neutral-accent-content
+  ">
     <div class="flex w-full flex-col">
-      <div class="divider divider-start after:bg-base-100">Explore Content</div>
+      <div class="
+        divider divider-start
+        after:bg-base-100
+      ">Explore Content</div>
     </div>
     <Closing />
   </div>

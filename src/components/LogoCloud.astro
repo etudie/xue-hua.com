@@ -32,24 +32,35 @@ const mobileLogos = logos.slice(0, mobileMax);
 ---
 
 <section class="px-4">
-  <div class="card card-xs gap-4 text-center">
+  <div class="card gap-4 text-center card-xs">
     <h2 class="card-title w-full justify-center opacity-85">Engineered & mentored at</h2>
-    <div class="text-base-content grid grid-cols-3 items-center justify-center gap-8">
+    <div class="
+      grid grid-cols-3 items-center justify-center gap-8 text-base-content
+    ">
       {
         mobileLogos.map((logo) => (
           <div
-            class={`flex items-center justify-center opacity-70 ${logo.scale ?? ""}`}
+            class={`
+              flex items-center justify-center opacity-70
+              ${logo.scale ?? ""}
+            `}
             aria-label={logo.name}
           >
             {logo.rawSvg ? (
-              <span class="block h-full w-full [&>svg]:h-full [&>svg]:w-full">
+              <span class="
+                block size-full
+                [&>svg]:size-full
+              ">
                 <Fragment set:html={logo.rawSvg} />
               </span>
             ) : (
               <img
                 src={typeof logo.src === "string" ? logo.src : logo.src?.src}
                 alt={logo.name}
-                class="h-full w-full object-contain transition group-hover:opacity-0"
+                class="
+                  size-full object-contain transition
+                  group-hover:opacity-0
+                "
                 loading="lazy"
                 decoding="async"
               />

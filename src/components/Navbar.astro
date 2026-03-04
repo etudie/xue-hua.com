@@ -4,30 +4,40 @@ import { GLOBAL } from "../constants/strings/global.strings";
 import Search from "./Search.astro";
 ---
 
-<div class="drawer drawer-end fixed z-50 w-full bg-black">
+<div class="drawer fixed z-50 drawer-end w-full bg-black">
   <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
 
   <div class="drawer-content">
     <div id="navbar-bar" class="navbar w-full transition-all duration-300">
       <div class="flex w-full items-center justify-between">
         <div class="flex-1">
-          <a href="/" class="btn btn-ghost font-sans! text-xl font-normal tracking-wider">
+          <a href="/" class="
+            btn font-sans! text-xl font-normal tracking-wider btn-ghost
+          ">
             {GLOBAL.site.xuehua}
           </a>
         </div>
 
         <!-- Desktop nav -->
-        <div class="hidden gap-6 lg:flex">
+        <div class="
+          hidden gap-6
+          lg:flex
+        ">
           {
             NAV_LINKS.map((item) =>
               item.children ? (
                 <div class="dropdown dropdown-end">
-                  <div tabindex="0" role="button" class="link link-hover cursor-pointer">
+                  <div tabindex="0" role="button" class="
+                    link cursor-pointer link-hover
+                  ">
                     {item.label}
                   </div>
                   <ul
                     tabindex="0"
-                    class="dropdown-content menu bg-base-200 rounded-box z-10 w-40 p-2 shadow"
+                    class="
+                      dropdown-content menu z-10 w-40 rounded-box bg-base-200
+                      p-2 shadow-sm
+                    "
                   >
                     {item.children.map((child) => (
                       <li>
@@ -45,7 +55,10 @@ import Search from "./Search.astro";
           }
         </div>
         <!-- Mobile hamburger -->
-        <div class="flex-none lg:hidden">
+        <div class="
+          flex-none
+          lg:hidden
+        ">
           <label for="nav-drawer" class="btn btn-square btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,14 +81,19 @@ import Search from "./Search.astro";
   <div class="drawer-side">
     <label for="nav-drawer" class="drawer-overlay"></label>
     <div
-      class="bg-base-200 text-base-content menu min-h-full w-full items-start p-8 pt-16 text-2xl font-semibold"
+      class="
+        menu min-h-full w-full items-start bg-base-200 p-8 pt-16 text-2xl
+        font-semibold text-base-content
+      "
     >
       <div class="flex w-full flex-row items-center justify-between pb-8">
-        <span class="text-neutral flex text-3xl">
+        <span class="flex text-3xl text-neutral">
           {GLOBAL.site.xuehua}
         </span>
         <!-- close drawer button -->
-        <label for="nav-drawer" aria-label="Close navigation" class="btn btn-ghost btn-square">
+        <label for="nav-drawer" aria-label="Close navigation" class="
+          btn btn-square btn-ghost
+        ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
