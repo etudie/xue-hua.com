@@ -1,20 +1,17 @@
 ---
-import { NAV_LINKS } from "../constants/strings/nav.strings.ts";
-import { GLOBAL } from "../constants/strings/global.strings";
-import Search from "./Search.astro";
+import { NAV_LINKS } from '../constants/strings/nav.strings.ts';
+import { GLOBAL } from '../constants/strings/global.strings';
+import Search from './Search.astro';
 ---
 
-<div class="drawer drawer-end fixed w-full z-50 bg-black">
+<div class="drawer drawer-end fixed z-50 w-full bg-black">
   <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
 
   <div class="drawer-content">
     <div id="navbar-bar" class="navbar w-full transition-all duration-300">
       <div class="flex w-full items-center justify-between">
         <div class="flex-1">
-          <a
-            href="/"
-            class="btn btn-ghost font-sans! text-xl font-normal tracking-wider"
-          >
+          <a href="/" class="btn btn-ghost font-sans! text-xl font-normal tracking-wider">
             {GLOBAL.site.xuehua}
           </a>
         </div>
@@ -25,11 +22,7 @@ import Search from "./Search.astro";
             NAV_LINKS.map((item) =>
               item.children ? (
                 <div class="dropdown dropdown-end">
-                  <div
-                    tabindex="0"
-                    role="button"
-                    class="link link-hover cursor-pointer"
-                  >
+                  <div tabindex="0" role="button" class="link link-hover cursor-pointer">
                     {item.label}
                   </div>
                   <ul
@@ -47,7 +40,7 @@ import Search from "./Search.astro";
                 <a href={item.href} class="link link-hover">
                   {item.label}
                 </a>
-              ),
+              )
             )
           }
         </div>
@@ -82,11 +75,7 @@ import Search from "./Search.astro";
           {GLOBAL.site.xuehua}
         </span>
         <!-- close drawer button -->
-        <label
-          for="nav-drawer"
-          aria-label="Close navigation"
-          class="btn btn-ghost btn-square"
-        >
+        <label for="nav-drawer" aria-label="Close navigation" class="btn btn-ghost btn-square">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -123,7 +112,7 @@ import Search from "./Search.astro";
               <li>
                 <a href={item.href}>{item.label}</a>
               </li>
-            ),
+            )
           )
         }
       </ul>
@@ -132,27 +121,27 @@ import Search from "./Search.astro";
 </div>
 
 <script>
-  const navbar = document.getElementById("navbar-bar");
+  const navbar = document.getElementById('navbar-bar');
   function updateNavbar() {
     if (window.scrollY > 0) {
-      navbar?.classList.add("bg-base-100", "shadow-sm");
+      navbar?.classList.add('bg-base-100', 'shadow-sm');
     } else {
-      navbar?.classList.remove("bg-base-100", "shadow-sm");
+      navbar?.classList.remove('bg-base-100', 'shadow-sm');
     }
   }
   updateNavbar();
-  window.addEventListener("scroll", updateNavbar, { passive: true });
+  window.addEventListener('scroll', updateNavbar, { passive: true });
 
-  const drawer = document.getElementById("nav-drawer");
+  const drawer = document.getElementById('nav-drawer');
   if (drawer instanceof HTMLInputElement) {
-    document.querySelectorAll("[data-close-drawer]").forEach((el) => {
-      el.addEventListener("click", () => {
+    document.querySelectorAll('[data-close-drawer]').forEach((el) => {
+      el.addEventListener('click', () => {
         drawer.checked = false;
       });
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") drawer.checked = false;
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') drawer.checked = false;
     });
   }
 </script>
