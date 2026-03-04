@@ -11,8 +11,7 @@ export const NOT_FOUND_STRINGS = {
   content: {
     eyebrow: "404",
     heading: "Page not found",
-    subheading:
-      "The link may be broken, the page may have moved, or the route never existed.",
+    subheading: "The link may be broken, the page may have moved, or the route never existed.",
   },
 
   actions: {

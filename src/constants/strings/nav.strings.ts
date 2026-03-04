@@ -30,5 +30,5 @@ export const NAV_LINKS: readonly NavItemType[] = [
 ] as const;
 
 export const NAV_MAP: Record<string, NavItemType> = Object.fromEntries(
-  NAV_LINKS.map((item) => [item.key, item]),
+  NAV_LINKS.map((item) => [item.key, item])
 );
