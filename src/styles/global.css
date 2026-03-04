@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "./fonts.css";
-@plugin "@tailwindcss/typography";
+@import "./styles.css";
 @theme {
     --color-light-100: #F0EFEC;
     --color-light-200: #F0E8D6;
@@ -42,8 +42,8 @@
 }
 
 @theme {
-    --font-sans: 'Open Sans';
-    --font-heading: 'Poppins';
+    --font-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-heading: 'Poppins', ui-sans-serif, system-ui, sans-serif;
     --color-neutral-accent: #847e89;
     --color-neutral-accent-content: #141414;
     --color-neutral-light: #F0E8D6;
@@ -60,16 +60,16 @@ html {
 }
 
 body {
-    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    @apply font-sans;
 }
 
 h1, h2, h3 {
-    font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+    @apply font-heading;
     font-weight: 600;
 }
 
 .btn {
-    font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+    @apply font-heading;
     font-weight: 600;
 }
 
