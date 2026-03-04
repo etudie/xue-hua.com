@@ -50,6 +50,10 @@
     --color-neutral-dark: #141414;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
