@@ -4,18 +4,18 @@ import type { SvgComponent } from "astro/types";
 
 type Logo = {
   name: string;
-  svg?: SvgComponent & ImageMetadata;
+  svg?: SvgComponent;
   scale?: string;
   src?: string | ImageMetadata;
   href?: string;
 };
 
-import BERKELEY_LOGO from "../assets/images/logos/berkeley.svg";
-import GVSU_LOGO from "../assets/images/logos/gvsu.svg";
-import HARVARD_LOGO from "../assets/images/logos/harvard.svg";
-import TESLA_LOGO from "../assets/images/logos/tesla.svg";
-import MICROSOFT_LOGO from "../assets/images/logos/microsoft.svg";
-import UW_LOGO from "../assets/images/logos/washington.svg";
+import BERKELEY_LOGO from "../assets/images/logos/berkeley.astro";
+import GVSU_LOGO from "../assets/images/logos/gvsu.astro";
+import HARVARD_LOGO from "../assets/images/logos/harvard.astro";
+import TESLA_LOGO from "../assets/images/logos/tesla.astro";
+import MICROSOFT_LOGO from "../assets/images/logos/microsoft.astro";
+import UW_LOGO from "../assets/images/logos/washington.astro";
 
 const logos: Logo[] = [
   { name: "Microsoft", svg: MICROSOFT_LOGO },
