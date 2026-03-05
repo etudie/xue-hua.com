@@ -14,7 +14,7 @@ import { FOOTER } from "../constants/strings/footer.strings";
       <nav class="flex w-full flex-col items-center">
         <h6 class="footer-title">{section.label}</h6>
         {section.content.map((item) => (
-          <a href={item.href} class="link link-hover">
+          <a class="link link-hover" href={item.href}>
             {item.label}
           </a>
         ))}

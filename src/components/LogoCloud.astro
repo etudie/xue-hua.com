@@ -40,11 +40,10 @@ const mobileLogos = logos.slice(0, mobileMax);
       {
         mobileLogos.map((logo) => (
           <div
-            class={`
+            aria-label={logo.name}             class={`
               flex items-center justify-center opacity-70
               ${logo.scale ?? ""}
             `}
-            aria-label={logo.name}
           >
             {logo.rawSvg ? (
               <span class="
@@ -55,14 +54,10 @@ const mobileLogos = logos.slice(0, mobileMax);
               </span>
             ) : (
               <img
-                src={typeof logo.src === "string" ? logo.src : logo.src?.src}
-                alt={logo.name}
-                class="
+                alt={logo.name}                 class="
                   size-full object-contain transition
                   group-hover:opacity-0
-                "
-                loading="lazy"
-                decoding="async"
+                "                 decoding="async"                 loading="lazy"                 src={typeof logo.src === "string" ? logo.src : logo.src?.src}
               />
             )}
           </div>

@@ -22,23 +22,23 @@ const twImage = toAbsoluteUrl(Astro.site, resolvedSeo.twitter.image);
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
   <title>{resolvedSeo.title}</title>
-  <meta name="description" content={resolvedSeo.description} />
-  <meta name="robots" content={resolvedSeo.robots} />
+  <meta content={resolvedSeo.description} name="description" />
+  <meta content={resolvedSeo.robots} name="robots" />
 
-  {resolvedSeo.canonical && <link rel="canonical" href={resolvedSeo.canonical} />}
+  {resolvedSeo.canonical && <link href={resolvedSeo.canonical} rel="canonical" />}
 
   <!-- Open Graph -->
-  <meta property="og:title" content={resolvedSeo.openGraph.title} />
-  <meta property="og:description" content={resolvedSeo.openGraph.description} />
-  <meta property="og:type" content={resolvedSeo.openGraph.type} />
-  {ogImage && <meta property="og:image" content={ogImage} />}
+  <meta content={resolvedSeo.openGraph.title} property="og:title" />
+  <meta content={resolvedSeo.openGraph.description} property="og:description" />
+  <meta content={resolvedSeo.openGraph.type} property="og:type" />
+  {ogImage && <meta content={ogImage} property="og:image" />}
 
   <!-- Twitter -->
-  <meta name="twitter:card" content={resolvedSeo.twitter.card} />
-  <meta name="twitter:title" content={resolvedSeo.twitter.title} />
-  <meta name="twitter:description" content={resolvedSeo.twitter.description} />
-  {twImage && <meta name="twitter:image" content={twImage} />}
+  <meta content={resolvedSeo.twitter.card} name="twitter:card" />
+  <meta content={resolvedSeo.twitter.title} name="twitter:title" />
+  <meta content={resolvedSeo.twitter.description} name="twitter:description" />
+  {twImage && <meta content={twImage} name="twitter:image" />}
 </head>
