@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import "./fonts.css";
+@import "tailwindcss";
 @import "./styles.css";
 @theme {
   --color-light-100: #f0efec;

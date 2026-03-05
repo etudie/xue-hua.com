@@ -4,39 +4,30 @@ import { GLOBAL } from "../constants/strings/global.strings";
 import Search from "./Search.astro";
 ---
 
-<div class="drawer fixed z-50 drawer-end w-full bg-black">
+<div class="drawer drawer-end fixed z-50 w-full bg-black">
   <input class="drawer-toggle" id="nav-drawer" type="checkbox" />
 
   <div class="drawer-content">
     <div class="navbar w-full transition-all duration-300" id="navbar-bar">
       <div class="flex w-full items-center justify-between">
         <div class="flex-1">
-          <a class="
-            btn font-sans! text-xl font-normal tracking-wider btn-ghost
-          " href="/">
+          <a class="btn btn-ghost font-sans! text-xl font-normal tracking-wider" href="/">
             {GLOBAL.site.xuehua}
           </a>
         </div>
 
         <!-- Desktop nav -->
-        <div class="
-          hidden gap-6
-          lg:flex
-        ">
+        <div class="hidden gap-6 lg:flex">
           {
             NAV_LINKS.map((item) =>
               item.children ? (
                 <div class="dropdown dropdown-end">
-                  <div class="
-                    link cursor-pointer link-hover
-                  " role="button" tabindex="0">
+                  <div class="link link-hover cursor-pointer" role="button" tabindex="0">
                     {item.label}
                   </div>
                   <ul
-                    class="
-                      dropdown-content menu z-10 w-40 rounded-box bg-base-200
-                      p-2 shadow-sm
-                    "                     tabindex="0"
+                    class="dropdown-content menu rounded-box bg-base-200 z-10 w-40 p-2 shadow-sm"
+                    tabindex="0"
                   >
                     {item.children.map((child) => (
                       <li>
@@ -54,16 +45,18 @@ import Search from "./Search.astro";
           }
         </div>
         <!-- Mobile hamburger -->
-        <div class="
-          flex-none
-          lg:hidden
-        ">
+        <div class="flex-none lg:hidden">
           <label class="btn btn-square btn-ghost" for="nav-drawer">
             <svg
-              class="size-8"               fill="currentColor"               viewBox="0 0 24 24"               xmlns="http://www.w3.org/2000/svg"
+              class="size-8"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                clip-rule="evenodd"                 d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"                 fill-rule="evenodd"></path>
+                clip-rule="evenodd"
+                d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+                fill-rule="evenodd"></path>
             </svg>
           </label>
         </div>
@@ -75,24 +68,24 @@ import Search from "./Search.astro";
   <div class="drawer-side">
     <label class="drawer-overlay" for="nav-drawer"></label>
     <div
-      class="
-        menu min-h-full w-full items-start bg-base-200 p-8 pt-16 text-2xl
-        font-semibold text-base-content
-      "
+      class="menu bg-base-200 text-base-content min-h-full w-full items-start p-8 pt-16 text-2xl font-semibold"
     >
       <div class="flex w-full flex-row items-center justify-between pb-8">
-        <span class="flex text-3xl text-neutral">
+        <span class="text-neutral flex text-3xl">
           {GLOBAL.site.xuehua}
         </span>
         <!-- close drawer button -->
-        <label aria-label="Close navigation" class="
-          btn btn-square btn-ghost
-        " for="nav-drawer">
+        <label aria-label="Close navigation" class="btn btn-square btn-ghost" for="nav-drawer">
           <svg
-            class="size-10"             fill="currentColor"             viewBox="0 0 24 24"             xmlns="http://www.w3.org/2000/svg"
+            class="size-10"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              clip-rule="evenodd"               d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"               fill-rule="evenodd"></path>
+              clip-rule="evenodd"
+              d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+              fill-rule="evenodd"></path>
           </svg>
         </label>
       </div>
@@ -127,28 +120,4 @@ import Search from "./Search.astro";
   </div>
 </div>
 
-<script>
-  const navbar = document.getElementById("navbar-bar");
-  function updateNavbar() {
-    if (window.scrollY > 0) {
-      navbar?.classList.add("bg-base-100", "shadow-sm");
-    } else {
-      navbar?.classList.remove("bg-base-100", "shadow-sm");
-    }
-  }
-  updateNavbar();
-  window.addEventListener("scroll", updateNavbar, { passive: true });
-
-  const drawer = document.getElementById("nav-drawer");
-  if (drawer instanceof HTMLInputElement) {
-    document.querySelectorAll("[data-close-drawer]").forEach((el) => {
-      el.addEventListener("click", () => {
-        drawer.checked = false;
-      });
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") drawer.checked = false;
-    });
-  }
-</script>
+<script src="../scripts/NavbarScript.js"></script>

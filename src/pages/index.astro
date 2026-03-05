@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import LogoCloud from "../components/LogoCloud.astro";
 import Offer from "../components/MainOffer.astro";
 import Closing from "../components/Closing.astro";
-import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg?raw";
+import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg";
 import FIREFLY from "../assets/hero-firefly.mp4";
 ---
 
@@ -15,7 +15,14 @@ import FIREFLY from "../assets/hero-firefly.mp4";
     <!-- hero video -->
     <div class="absolute flex size-full items-center overflow-hidden">
       <video
-        aria-hidden="true"         autoplay         class="h-8/10 object-cover opacity-80"         id="hero-video"         loop         muted         playsinline         preload="auto"
+        aria-hidden="true"
+        autoplay
+        class="h-8/10 object-cover opacity-80"
+        id="hero-video"
+        loop
+        muted
+        playsinline
+        preload="auto"
       >
         <source src={FIREFLY} type="video/mp4" />
         Your browser does not support the video tag.
@@ -29,9 +36,7 @@ import FIREFLY from "../assets/hero-firefly.mp4";
     <!--hero content container-->
     <div class="hero flex flex-col gap-8">
       <!-- hero content-->
-      <section class="
-        hero-content flex-1 flex-col justify-between px-8 text-center
-      ">
+      <section class="hero-content flex-1 flex-col justify-between px-8 text-center">
         <!--title-->
         <div class="flex flex-1 flex-col justify-center gap-8">
           <h1 class="hero-text font-semibold" data-text="Engineering Purpose">
@@ -46,44 +51,44 @@ import FIREFLY from "../assets/hero-firefly.mp4";
         <!--CTA buttons-->
         <div class="flex w-full flex-col gap-8">
           <button class="btn btn-md btn-primary"> Schedule a Workshop</button>
-          <button class="
-            btn text-neutral-light backdrop-blur-md btn-outline btn-md
-          ">
+          <button class="btn text-neutral-light btn-outline btn-md backdrop-blur-md">
             Explore Resources</button
           >
         </div>
       </section>
 
       <!--down arrow-->
-      <div class="flex w-full items-center justify-center text-base-content/80">
+      <div class="text-base-content/80 flex w-full items-center justify-center">
         <svg
-          class="size-6 animate-bounce"           fill="none"           stroke="currentColor"           stroke-width="1.5"           viewBox="0 0 24 24"           xmlns="http://www.w3.org/2000/svg"
+          class="size-6 animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"             stroke-linecap="round"             stroke-linejoin="round"></path>
+            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
         </svg>
       </div>
     </div>
   </div>
 
   <!-- PANEL 2 -->
-  <div class="
-    flex h-svh w-full flex-col justify-between gap-8 bg-neutral-dark p-6
-  ">
+  <div class="bg-neutral-dark flex h-svh w-full flex-col justify-between gap-8 p-6">
     <div class="divider divider-start">About the Work</div>
 
-    <div class="
-      stats w-full flex-1 stats-vertical
-      lg:stats-horizontal
-    ">
+    <div class="stats stats-vertical lg:stats-horizontal w-full flex-1">
       <div class="stat">
         <div class="stat-title">Clarity over AI complexity</div>
-        <div class="stat-value text-center text-2xl text-primary">100+ sessions</div>
+        <div class="stat-value text-primary text-center text-2xl">100+ sessions</div>
       </div>
 
       <div class="stat">
         <div class="stat-title">Execution for the overwhelmed</div>
-        <div class="stat-value text-center text-2xl text-secondary">50+ engineers</div>
+        <div class="stat-value text-secondary text-center text-2xl">50+ engineers</div>
       </div>
 
       <div class="stat">
@@ -95,16 +100,13 @@ import FIREFLY from "../assets/hero-firefly.mp4";
 
     <div class="flex justify-end">
       <button class="btn btn-soft btn-md btn-primary"
-        >See my work <Fragment set:html={ARROW_RIGHT} />
+        >See my work <img alt="right arrow" src={ARROW_RIGHT.src} />
       </button>
     </div>
   </div>
 
   <!-- PANEL 3 -->
-  <div class="
-    flex h-svh w-full flex-col justify-between bg-neutral p-6
-    text-neutral-content
-  ">
+  <div class="bg-neutral text-neutral-content flex h-svh w-full flex-col justify-between p-6">
     <div class="flex w-full flex-col">
       <div class="divider divider-start divider-accent">Work with Xue</div>
     </div>
@@ -112,46 +114,12 @@ import FIREFLY from "../assets/hero-firefly.mp4";
   </div>
 
   <!-- PANEL 4 -->
-  <div class="
-    flex h-svh w-full flex-col gap-8 bg-neutral-light p-6
-    text-neutral-accent-content
-  ">
+  <div class="bg-neutral-light text-neutral-accent-content flex h-svh w-full flex-col gap-8 p-6">
     <div class="flex w-full flex-col">
-      <div class="
-        divider divider-start
-        after:bg-base-100
-      ">Explore Content</div>
+      <div class="divider divider-start after:bg-base-100">Explore Content</div>
     </div>
     <Closing />
   </div>
 </BaseLayout>
 
-<script>
-  const video = document.getElementById("hero-video");
-
-  if (video instanceof HTMLVideoElement) {
-    video.muted = true;
-    video.playsInline = true;
-    video.playbackRate = 0.6; // slower than normal
-
-    const tryPlay = async () => {
-      try {
-        await video.play();
-      } catch {
-        // catch this
-      }
-    };
-
-    // Try immediately
-    tryPlay();
-
-    // Retry once on first user interaction (common iOS behavior)
-    const once = () => {
-      tryPlay();
-      window.removeEventListener("touchstart", once);
-      window.removeEventListener("click", once);
-    };
-    window.addEventListener("touchstart", once, { passive: true });
-    window.addEventListener("click", once, { passive: true });
-  }
-</script>
+<script src="../scripts/IndexScript.js"></script>

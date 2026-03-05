@@ -1,28 +1,29 @@
 ---
 import type { ImageMetadata } from "astro";
+import type { SvgComponent } from "astro/types";
 
 type Logo = {
   name: string;
-  rawSvg?: string;
+  svg?: SvgComponent & ImageMetadata;
   scale?: string;
   src?: string | ImageMetadata;
   href?: string;
 };
 
-import BERKELEY_LOGO from "../assets/images/logos/berkeley.svg?raw";
-import GVSU_LOGO from "../assets/images/logos/gvsu.svg?raw";
-import HARVARD_LOGO from "../assets/images/logos/harvard.svg?raw";
-import TESLA_LOGO from "../assets/images/logos/tesla.svg?raw";
-import MICROSOFT_LOGO from "../assets/images/logos/microsoft.svg?raw";
-import UW_LOGO from "../assets/images/logos/washington.svg?raw";
+import BERKELEY_LOGO from "../assets/images/logos/berkeley.svg";
+import GVSU_LOGO from "../assets/images/logos/gvsu.svg";
+import HARVARD_LOGO from "../assets/images/logos/harvard.svg";
+import TESLA_LOGO from "../assets/images/logos/tesla.svg";
+import MICROSOFT_LOGO from "../assets/images/logos/microsoft.svg";
+import UW_LOGO from "../assets/images/logos/washington.svg";
 
 const logos: Logo[] = [
-  { name: "Microsoft", rawSvg: MICROSOFT_LOGO },
-  { name: "Tesla", rawSvg: TESLA_LOGO },
-  { name: "Berkeley", rawSvg: BERKELEY_LOGO },
-  { name: "Harvard", rawSvg: HARVARD_LOGO },
-  { name: "GVSU", rawSvg: GVSU_LOGO, scale: "scale-[1.2]" },
-  { name: "University of Washington", rawSvg: UW_LOGO },
+  { name: "Microsoft", svg: MICROSOFT_LOGO },
+  { name: "Tesla", svg: TESLA_LOGO },
+  { name: "Berkeley", svg: BERKELEY_LOGO },
+  { name: "Harvard", svg: HARVARD_LOGO },
+  { name: "GVSU", svg: GVSU_LOGO, scale: "scale-[1.2]" },
+  { name: "University of Washington", svg: UW_LOGO },
 ];
 
 // Mobile cap: 6 logos is a great default.
@@ -32,32 +33,26 @@ const mobileLogos = logos.slice(0, mobileMax);
 ---
 
 <section class="px-4">
-  <div class="card gap-4 text-center card-xs">
+  <div class="card card-xs gap-4 text-center">
     <h2 class="card-title w-full justify-center opacity-85">Engineered & mentored at</h2>
-    <div class="
-      grid grid-cols-3 items-center justify-center gap-8 text-base-content
-    ">
+    <div class="text-base-content grid grid-cols-3 items-center justify-center gap-8">
       {
         mobileLogos.map((logo) => (
           <div
-            aria-label={logo.name}             class={`
-              flex items-center justify-center opacity-70
-              ${logo.scale ?? ""}
-            `}
+            aria-label={logo.name}
+            class={`flex items-center justify-center opacity-70 ${logo.scale ?? ""} `}
           >
-            {logo.rawSvg ? (
-              <span class="
-                block size-full
-                [&>svg]:size-full
-              ">
-                <Fragment set:html={logo.rawSvg} />
+            {logo.svg ? (
+              <span class="block size-full [&>svg]:size-full">
+                <img alt={logo.name} src={logo.svg.src} />
               </span>
             ) : (
               <img
-                alt={logo.name}                 class="
-                  size-full object-contain transition
-                  group-hover:opacity-0
-                "                 decoding="async"                 loading="lazy"                 src={typeof logo.src === "string" ? logo.src : logo.src?.src}
+                alt={logo.name}
+                class="size-full object-contain transition group-hover:opacity-0"
+                decoding="async"
+                loading="lazy"
+                src={typeof logo.src === "string" ? logo.src : logo.src?.src}
               />
             )}
           </div>

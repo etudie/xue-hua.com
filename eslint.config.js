@@ -8,9 +8,9 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig({
   extends: [js.configs.recommended, eslintPluginAstro.configs.recommended],
-  ignores: ["node_modules", "dist", "coverage", "*.config.js", "*.config.mjs"],
+  ignores: ["node_modules", "dist", "coverage", "scripts/**", "*.config.js", "*.config.mjs"],
 
-  files: ["**/*.astro", "scripts/**/*.mjs", "scripts/**/*.js"],
+  files: ["**/*.astro"],
   languageOptions: {
     parser: eslintParserAstro,
     parserOptions: {
