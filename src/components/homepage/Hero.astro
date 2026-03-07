@@ -1,5 +1,46 @@
 ---
-import hero from "../../assets/images/hero/hero-main.webp";
+import FIREFLY from "../../assets/hero-firefly.mp4";
+import ARROW_DOWN from "../../assets/images/icons/arrow-down.astro";
 ---
 
-<img alt="xue" src={hero.src} />
+<div class="hero-container">
+  <!-- hero video -->
+  <div class="hero-video">
+    <video aria-hidden="true" autoplay id="hero-video" loop muted playsinline preload="auto">
+      <source src={FIREFLY} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-bg-overlay-container">
+      <div class="hero-bg-overlay-top"></div>
+      <div class="hero-bg-overlay-bottom"></div>
+    </div>
+  </div>
+
+  <!-- hero content container -->
+  <div class="hero-section">
+    <!-- hero content -->
+    <div class="hero-section-content">
+      <!-- hero title & subtitle -->
+      <div class="hero-section-title">
+        <h1 class="hero-text" data-text="Engineering Purpose">
+          <span> Engineering Purpose</span>
+        </h1>
+
+        <h6 class="hero-subtitle">
+          I make AI click for your people.<br />Clear systems. Real results.
+        </h6>
+      </div>
+
+      <!-- hero CTA buttons-->
+      <div class="hero-section-cta">
+        <button class="primary-cta"> Schedule a Workshop</button>
+        <button class="secondary-cta"> Explore Resources</button>
+      </div>
+    </div>
+
+    <!-- scroll down arrow -->
+    <div class="hero-section-scroll-down">
+      <ARROW_DOWN />
+    </div>
+  </div>
+</div>
