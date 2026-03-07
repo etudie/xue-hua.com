@@ -2,8 +2,6 @@ import eslintParserAstro from "astro-eslint-parser";
 import js from "@eslint/js";
 import { parser as eslintParserTypeScript } from "typescript-eslint";
 import eslintPluginAstro from "eslint-plugin-astro";
-import globals from "globals";
-import eslintPluginBetterTailwindcss from "eslint-plugin-better-tailwindcss";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig({
@@ -15,9 +13,6 @@ export default defineConfig({
     parser: eslintParserAstro,
     parserOptions: {
       parser: eslintParserTypeScript,
-    },
-    globals: {
-      ...globals.node,
     },
   },
   rules: {
