@@ -4,80 +4,15 @@ import LogoCloud from "../components/homepage/LogoCloud.astro";
 import Offer from "../components/homepage/MainOffer.astro";
 import Closing from "../components/homepage/Closing.astro";
 import ARROW_RIGHT from "../assets/images/icons/arrow-right.astro";
-import FIREFLY from "../assets/hero-firefly.mp4";
-import ARROW_DOWN from "../assets/images/icons/arrow-down.astro";
+import Hero from "../components/homepage/Hero.astro";
+import Work from "../components/homepage/AboutTheWork.astro";
 ---
 
 <BaseLayout backgroundColor="bg-black" title="Home">
-  <div class="hero-container">
-    <!-- hero video -->
-    <div class="hero-video">
-      <video aria-hidden="true" autoplay id="hero-video" loop muted playsinline preload="auto">
-        <source src={FIREFLY} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="hero-bg-overlay-container">
-        <div class="hero-bg-overlay-top"></div>
-        <div class="hero-bg-overlay-bottom"></div>
-      </div>
-    </div>
-
-    <!--hero content container-->
-    <div class="hero-section">
-      <!-- hero content-->
-      <div class="hero-section-content">
-        <!--title-->
-        <div class="hero-section-title">
-          <h1 class="hero-text" data-text="Engineering Purpose">
-            <span> Engineering Purpose</span>
-          </h1>
-
-          <h6 class="hero-subtitle">
-            I make AI click for your people.<br />Clear systems. Real results.
-          </h6>
-        </div>
-
-        <!--CTA buttons-->
-        <div class="hero-section-cta">
-          <button class="primary-cta"> Schedule a Workshop</button>
-          <button class="secondary-cta"> Explore Resources</button>
-        </div>
-      </div>
-
-      <!--down arrow-->
-      <div class="hero-section-scroll-down">
-        <ARROW_DOWN />
-      </div>
-    </div>
-  </div>
-
+  <Hero />
   <section class="content bg-neutral-dark flex w-full flex-col gap-10">
     <!-- PANEL 2 -->
-    <div class="divider divider-start">About the Work</div>
-    <div class="stats stats-vertical lg:stats-horizontal">
-      <div class="stat">
-        <div class="stat-title">Clarity over AI complexity</div>
-        <div class="stat-value text-primary text-center">100+ sessions</div>
-      </div>
-
-      <div class="stat">
-        <div class="stat-title">Execution for the overwhelmed</div>
-        <div class="stat-value text-secondary text-center">50+ engineers</div>
-      </div>
-
-      <div class="stat">
-        <div class="stat-title">Only clear systems that work</div>
-        <div class="stat-value text-center">0% AI theater</div>
-      </div>
-    </div>
-
-    <LogoCloud />
-
-    <div class="flex justify-end">
-      <button class="btn btn-soft btn-md btn-primary">
-        See my work <ARROW_RIGHT />
-      </button>
-    </div>
+    <Work />
 
     <!-- PANEL 3 -->
     <Offer />

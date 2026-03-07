@@ -2,6 +2,16 @@
   themes: default;
 }
 
+.content {
+  & > * {
+    @apply px-8;
+  }
+}
+
+.divider {
+  @apply pt-8;
+}
+
 .hero-container {
   @apply box-content flex min-h-screen w-full bg-black pb-20;
 }
@@ -93,14 +103,15 @@
   .stat:not(:last-child) {
     @apply border-r-0 border-solid;
   }
+  .stat:is(:first-child) {
+    @apply pt-0;
+  }
 }
 
 .stat-title {
   @apply text-base-content/80;
 }
 
-.content {
-  & > * {
-    @apply px-8;
-  }
+.stat-value {
+  @apply text-center;
 }
