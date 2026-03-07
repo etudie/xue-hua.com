@@ -3,7 +3,7 @@
 }
 
 .hero-container {
-  @apply flex min-h-lvh w-full bg-black py-12;
+  @apply box-content flex min-h-screen w-full bg-black pb-20;
 }
 
 .hero-video {
@@ -14,7 +14,7 @@
 }
 
 .hero-section {
-  @apply flex max-w-full flex-col justify-between gap-8;
+  @apply flex max-h-svh max-w-full flex-col justify-between gap-8;
 }
 
 .hero-section-content {
@@ -79,7 +79,7 @@
 }
 
 .hero-section-scroll-down {
-  @apply text-base-content/80 flex w-full items-center justify-center;
+  @apply text-base-content/80 flex w-full items-center justify-center pb-8;
   & > * {
     @apply size-6 animate-bounce;
   }
