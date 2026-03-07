@@ -1,5 +1,5 @@
 ---
-import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg";
+import ARROW_RIGHT from "../assets/images/icons/arrow-right.astro";
 ---
 
 <div class="flex w-full flex-col gap-8">
@@ -17,7 +17,7 @@ import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg";
       <div class="card-actions justify-end">
         <button class="btn btn-soft"
           >How I work
-          <img alt="right arrow" src={ARROW_RIGHT.src} />
+          <ARROW_RIGHT />
         </button>
       </div>
     </div>
@@ -37,9 +37,7 @@ import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg";
       resources.
     </p>
     <div class="card-actions justify-end">
-      <button class="btn btn-soft"
-        >Start Here <img alt="right arrow" src={ARROW_RIGHT.src} /></button
-      >
+      <button class="btn btn-soft">Start Here <ARROW_RIGHT /></button>
     </div>
   </div>
 </div>

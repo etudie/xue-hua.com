@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import LogoCloud from "../components/LogoCloud.astro";
 import Offer from "../components/MainOffer.astro";
 import Closing from "../components/Closing.astro";
-import ARROW_RIGHT from "../assets/images/icons/arrow-right.svg";
+import ARROW_RIGHT from "../assets/images/icons/arrow-right.astro";
 import FIREFLY from "../assets/hero-firefly.mp4";
 ---
 
@@ -99,12 +99,11 @@ import FIREFLY from "../assets/hero-firefly.mp4";
     <LogoCloud />
 
     <div class="flex justify-end">
-      <button class="btn btn-soft btn-md btn-primary"
-        >See my work <img alt="right arrow" src={ARROW_RIGHT.src} />
+      <button class="btn btn-soft btn-md btn-primary">
+        See my work <ARROW_RIGHT />
       </button>
     </div>
   </div>
-
   <!-- PANEL 3 -->
   <div class="bg-neutral text-neutral-content flex h-svh w-full flex-col justify-between p-6">
     <div class="flex w-full flex-col">
@@ -121,5 +120,4 @@ import FIREFLY from "../assets/hero-firefly.mp4";
     <Closing />
   </div>
 </BaseLayout>
-
 <script src="../scripts/IndexScript.js"></script>
