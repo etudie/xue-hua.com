@@ -1,6 +1,7 @@
 @import "./fonts.css";
 @import "tailwindcss";
 @import "./styles.css";
+@import "./homepage.css";
 @theme {
   --color-light-100: #f0efec;
   --color-light-200: #f0e8d6;
